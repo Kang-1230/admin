@@ -1,0 +1,6 @@
+reviews:
+  auto_review: true # PR 생성 시 자동 리뷰 실행
+  review_status: true # 리뷰 상태 메시지 GitHub에 표시
+  branches:
+    include:
+      - "*" # 모든 브랜치 대상 (main, dev, feature/* 등 전부)
