@@ -1,1 +1,1 @@
-![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/reviews/Kang-1230/admin)
+**![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Kang-1230/admin?utm_source=oss&utm_medium=github&utm_campaign=Kang-1230%2Fadmin&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)**
