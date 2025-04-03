@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+
+reviews:
+  auto_review:
+    enabled: true
+  review_status: true
+  branches:
+    include:
+      - "*"
+  profile: assertive
+
+  instructions: |
+    Language: Korean
+    - 저는 프론트엔드 개발자로 취업을 준비 중입니다. 코드가 현업 개발자 수준에 가깝도록 개선될 수 있도록 리뷰해 주세요.
+    - 리뷰는 친절하고 존중 있는 말투로 작성해 주세요.
+    - 코드의 가독성, 유지보수성, 성능, 접근성, 보안 관점에서 꼼꼼하게 검토해 주세요.
+    - React, TypeScript, CSS 스타일링(모듈 또는 Tailwind), 상태 관리 등 프론트엔드에서 흔히 쓰는 기술 스택 기준으로 리뷰해 주세요.
+    - 더 나은 구현 방식이나 리팩토링 포인트가 있다면 구체적인 이유와 함께 제안해 주세요.
+    - 처음 보는 문법이나 복잡한 로직은 왜 그렇게 작성했는지 설명해 주세요.
+    - 코드가 더 명확해질 수 있도록 변수명, 함수 구조, 주석 작성도 함께 검토해 주세요.
