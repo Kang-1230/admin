@@ -2,14 +2,15 @@
 
 reviews:
   auto_review:
-    enabled: true # 모든 PR에 대해 자동 리뷰 활성화
-  review_status: true # GitHub에 리뷰 상태 메시지 표시
+    enabled: true
+  review_status: true
   branches:
     include:
-      - "*" # 모든 브랜치에서 자동 리뷰 작동
-  profile: assertive
+      - "*"
+  profile: friendly
 
   instructions: |
+    Language: Korean
     - 저는 프론트엔드 개발자로 취업을 준비 중입니다. 코드가 현업 개발자 수준에 가깝도록 개선될 수 있도록 리뷰해 주세요.
     - 리뷰는 친절하고 존중 있는 말투로 작성해 주세요.
     - 코드의 가독성, 유지보수성, 성능, 접근성, 보안 관점에서 꼼꼼하게 검토해 주세요.
