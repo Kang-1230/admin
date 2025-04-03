@@ -7,7 +7,7 @@ reviews:
   branches:
     include:
       - "*"
-  profile: friendly
+  profile: assertive
 
   instructions: |
     Language: Korean
