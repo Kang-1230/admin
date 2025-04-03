@@ -7,6 +7,8 @@ reviews:
   branches:
     include:
       - "*" # 모든 브랜치에서 자동 리뷰 작동
+  profile: assertive
+
   instructions: |
     - 저는 프론트엔드 개발자로 취업을 준비 중입니다. 코드가 현업 개발자 수준에 가깝도록 개선될 수 있도록 리뷰해 주세요.
     - 리뷰는 친절하고 존중 있는 말투로 작성해 주세요.
