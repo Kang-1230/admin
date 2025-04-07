@@ -12,6 +12,16 @@ type Login = {
   password: string;
 };
 
+/**
+ * Renders the login page for user authentication.
+ *
+ * This component presents a form that collects the user's email and password,
+ * utilizing react-hook-form for state management and validation. Upon form submission,
+ * it attempts to sign in the user and navigates to the home page on success.
+ * A separate button is also provided to navigate to the sign-up page.
+ *
+ * @returns The JSX element representing the login page layout.
+ */
 export default function Login() {
   const router = useRouter();
   const {
