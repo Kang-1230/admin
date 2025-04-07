@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { signInWithPassWord } from "@/lib/auth/Login";
+import Logo from "@/assets/images/Logo.svg";
 
 type Login = {
   email: string;

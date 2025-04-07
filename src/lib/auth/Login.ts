@@ -4,8 +4,8 @@ export async function signInWithPassWord(email: string, password: string) {
   const supabase = createClient();
 
   const { data, error } = await supabase.auth.signInWithPassword({
-    email: "example@email.com",
-    password: "example-password"
+    email: email,
+    password: password
   });
 
   if (error) {
