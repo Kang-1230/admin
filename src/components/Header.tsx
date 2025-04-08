@@ -1,8 +1,7 @@
 import Logo from "@/assets/images/Logo.svg";
-import Logout from "@/lib/auth/logout";
+import LogoutButton from "@/components/LogoutButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import InteractiveButton from "./InteractiveButton";
 
 export default async function Header() {
   const supabase = await createClient();
@@ -16,10 +15,12 @@ export default async function Header() {
   return (
     <div className="flex h-[76px] w-full items-center justify-between">
       <Logo />
-      <div className="w-max-w-[200px] flex h-full items-center justify-center pr-[32px]">
-        {data.user.email} 님 안녕하세요!
+      <div className="flex">
+        <div className="w-max-w-[200px] flex h-full items-center justify-center pr-[32px]">
+          {data.user.email} 님 안녕하세요!
+        </div>
+        <LogoutButton />
       </div>
-      <InteractiveButton buttonName="로그아웃" buttonFn={() => Logout()} />
     </div>
   );
 }
