@@ -10,19 +10,30 @@ import {
   TableRow
 } from "@/components/ui/Table";
 import { createClient } from "@/utils/supabase/client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+interface FetchData {
+  content_id: string;
+  category_id: string;
+  title: string;
+  content: string;
+  status: string;
+  insert_user_id: string;
+  created_at: string;
+  updated_at: string;
+}
 
 export default function ContentListDraft() {
   const supabase = createClient();
+  const [contentsFetchData, setContentsFetchData] = useState<FetchData[]>([]);
 
   useEffect(() => {
     const fetchContents = async () => {
-      const { data: userData } = await supabase.auth.getSession();
-      console.log("userData", userData);
-
       const { data: contentsFetchData, error: contentsFetchError } =
         await supabase.from("contents").select();
-
+      if (contentsFetchData) {
+        setContentsFetchData(contentsFetchData);
+      }
       console.log("contentsFetchData", contentsFetchData);
 
       if (contentsFetchError) {
@@ -42,22 +53,32 @@ export default function ContentListDraft() {
             <TableCaption>A list of your recent invoices.</TableCaption>
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[100px]">ID</TableHead>
+                <TableHead>ID</TableHead>
                 <TableHead>카테고리</TableHead>
                 <TableHead>타이틀</TableHead>
                 <TableHead>내용</TableHead>
+                <TableHead>상태</TableHead>
+
                 <TableHead>작성자</TableHead>
-                <TableHead className="">작성일</TableHead>
-                <TableHead className="">마지막 업데이트</TableHead>
+                <TableHead>작성일</TableHead>
+                <TableHead>마지막 업데이트</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
-              <TableRow>
-                <TableCell className="font-medium">INV001</TableCell>
-                <TableCell>Paid</TableCell>
-                <TableCell>Credit Card</TableCell>
-                <TableCell className="text-right">$250.00</TableCell>
-              </TableRow>
+              {contentsFetchData.map((content: FetchData) => (
+                <TableRow key={content.content_id}>
+                  <TableCell>{content.content_id}</TableCell>
+                  <TableCell>{content.category_id}</TableCell>
+                  <TableCell>{content.title}</TableCell>
+                  <TableCell>{content.content}</TableCell>
+                  <TableCell>{content.status}</TableCell>
+                  <TableCell>{content.insert_user_id}</TableCell>
+                  <TableCell className="overflow-hidden text-ellipsis whitespace-nowrap">
+                    {content.created_at}
+                  </TableCell>
+                  <TableCell>{content.updated_at}</TableCell>
+                </TableRow>
+              ))}
             </TableBody>
           </Table>
         </form>

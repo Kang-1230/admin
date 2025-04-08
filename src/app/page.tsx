@@ -8,8 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       <Header />
-      <Link href="/login">로그인</Link>
-      <Link href="/sign-up">회원가입</Link>
+
       <main className="flex">
         <SideBar />
         <ContentListDraft />
