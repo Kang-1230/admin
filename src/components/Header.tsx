@@ -1,5 +1,5 @@
 import Logo from "@/assets/images/Logo.svg";
-import LogoutButton from "@/components/LogoutButton";
+import LogoutButton from "@/components/ui/LogoutButton";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 
