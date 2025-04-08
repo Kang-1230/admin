@@ -12,6 +12,8 @@ export default async function Header() {
     redirect("/login");
   }
 
+  console.log("header user", data.user);
+
   return (
     <div className="flex h-[76px] w-full items-center justify-between">
       <Logo />

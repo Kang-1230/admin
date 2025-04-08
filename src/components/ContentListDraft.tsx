@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Table,
   TableBody,
@@ -7,8 +9,29 @@ import {
   TableHeader,
   TableRow
 } from "@/components/ui/Table";
+import { createClient } from "@/utils/supabase/client";
+import { useEffect } from "react";
 
 export default function ContentListDraft() {
+  const supabase = createClient();
+
+  useEffect(() => {
+    const fetchContents = async () => {
+      const { data: userData } = await supabase.auth.getSession();
+      console.log("userData", userData);
+
+      const { data: contentsFetchData, error: contentsFetchError } =
+        await supabase.from("contents").select();
+
+      console.log("contentsFetchData", contentsFetchData);
+
+      if (contentsFetchError) {
+        console.error("contentsFetchError", contentsFetchError);
+      }
+    };
+    fetchContents();
+  }, []);
+
   return (
     <div>
       <div></div>
