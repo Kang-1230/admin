@@ -10,6 +10,7 @@ import {
   TableRow
 } from "@/components/ui/Table";
 import { createClient } from "@/utils/supabase/client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface FetchData {
@@ -47,7 +48,18 @@ export default function ContentListDraft() {
     <div>
       <div></div>
       <div>
-        <h3>콘텐츠 목록</h3>
+        <div className="flex w-full justify-between">
+          <h3 className="flex items-center justify-center p-[14px]">
+            콘텐츠 목록
+          </h3>
+          <Link
+            href="/content-create"
+            className="flex w-[140px] items-center justify-center bg-amber-200 p-[14px]"
+          >
+            콘텐츠 생성
+          </Link>
+        </div>
+
         <form>
           <Table className="w-full">
             <TableCaption>A list of your recent invoices.</TableCaption>
