@@ -22,6 +22,12 @@ interface FetchData {
   insert_user_id: string;
   created_at: string;
   updated_at: string;
+  content_type: string;
+  category_name: string;
+  card_image: string;
+  card_video: string;
+  card_tag: string;
+  card_background: string;
 }
 
 export default function ContentListDraft() {
@@ -80,7 +86,7 @@ export default function ContentListDraft() {
               {contentsFetchData.map((content: FetchData) => (
                 <TableRow key={content.content_id}>
                   <TableCell>{content.content_id}</TableCell>
-                  <TableCell>{content.category_id}</TableCell>
+                  <TableCell>{content.category_name}</TableCell>
                   <TableCell>{content.title}</TableCell>
                   <TableCell>{content.content}</TableCell>
                   <TableCell>{content.status}</TableCell>
